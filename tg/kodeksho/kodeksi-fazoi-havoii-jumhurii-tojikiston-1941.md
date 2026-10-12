@@ -7,11 +7,11 @@ jurisdiction: tj
 language: tg
 date: 2023-11-13
 classification: "Кодекс"
-last_amended: 2025-12-20  # consolidated text as captured on this date
+last_amended: 2026-02-07  # consolidated text as captured on this date
 status: in_force
 mmk_status: "Амалкунанда"
-source: "https://mmk.tj/content/%D0%BA%D0%BE%D0%B4%D0%B5%D0%BA%D1%81%D0%B8-%D1%84%D0%B0%D0%B7%D0%BE%D0%B8-%D2%B3%D0%B0%D0%B2%D0%BE%D0%B8%D0%B8-%D2%B7%D1%83%D0%BC%D2%B3%D1%83%D1%80%D0%B8%D0%B8-%D1%82%D0%BE%D2%B7%D0%B8%D0%BA%D0%B8%D1%81%D1%82%D0%BE%D0%BD-0"
-archived_source: "https://web.archive.org/web/20251220172438/https://mmk.tj/content/%D0%BA%D0%BE%D0%B4%D0%B5%D0%BA%D1%81%D0%B8-%D1%84%D0%B0%D0%B7%D0%BE%D0%B8-%D2%B3%D0%B0%D0%B2%D0%BE%D0%B8%D0%B8-%D2%B7%D1%83%D0%BC%D2%B3%D1%83%D1%80%D0%B8%D0%B8-%D1%82%D0%BE%D2%B7%D0%B8%D0%BA%D0%B8%D1%81%D1%82%D0%BE%D0%BD-0"
+source: "https://mmk.tj/node/1941"
+archived_source: "https://web.archive.org/web/20260207064639/https://mmk.tj/node/1941"
 retrieved: 2026-10-12
 ---
 

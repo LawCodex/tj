@@ -22,6 +22,8 @@ PAT = {
     'paragraph': re.compile(r'^(§\s*\d|параграфи\s+\d|параграф\s+\d)', re.I),
     'article': re.compile(r'^(моддаи\s+\d|статья\s+\d)', re.I),
 }
+DIRS_RU = {'constitution': 'konstitutsiya', 'constitutional_law': 'konstitutsionnye-zakony',
+           'code': 'kodeksy', 'law': 'zakony', 'other': 'drugie'}
 DIRS = {'constitution': 'konstitutsiya', 'constitutional_law': 'qonunhoi-konstitutsioni',
         'code': 'kodeksho', 'law': 'qonunho', 'other': 'digar'}
 
@@ -166,7 +168,7 @@ def classify(title, cls):
         return 'constitutional_law'
     if t.startswith('КОДЕКС') or 'КОДЕКС' in c:
         return 'code'
-    if t.startswith('ҚОНУН') or c.startswith('ҚОНУН'):
+    if t.startswith('ҚОНУН') or c.startswith('ҚОНУН') or c.startswith('ЗАКОН') or 'ЗАКОН' in t[:40]:
         return 'law'
     return 'other'
 
@@ -210,16 +212,17 @@ def main():
             dm = re.search(r'(\d{1,2})\s+([А-Яа-яӢӣӮӯ]+),?\s+(\d{4})', date)
             if dm and dm.group(2).lower()[:3] in MONTHS:
                 iso = f'{dm.group(3)}-{MONTHS[dm.group(2).lower()[:3]]:02d}-{int(dm.group(1)):02d}'
-        lang = 'tg'
-        lab = art.select_one('.form-type-item')
-        if lab and 'Русский' in lab.get_text():
-            lang = 'ru'
+        btxt = body.get_text(' ')
+        lang = 'tg' if len(re.findall('[ҷӣӯқғҳҶӢӮҚҒҲ]', btxt)) > 20 else 'ru'
         typ = classify(title, cls)
-        st = 'in_force' if 'амал' in status.lower() and 'қувва' not in status.lower() else (
-            'repealed' if status and ('қувваи' in status.lower() or 'бекор' in status.lower()) else 'unknown')
+        sl = status.lower()
+        st = 'repealed' if ('соқит' in sl or 'бекор' in sl or 'қувваи' in sl) else ('in_force' if 'амал' in sl else 'unknown')
+        if st == 'repealed' or typ == 'other':
+            stats[('skipped', typ, st)] = stats.get(('skipped', typ, st), 0) + 1
+            continue
         name = slug(title) or ('node-' + nid)
         name = f'{name}-{nid}'
-        sub = DIRS[typ]
+        sub = DIRS[typ] if lang == 'tg' else DIRS_RU[typ]
         rel = os.path.join(lang, sub, (iso[:4] if (typ == 'law' and iso) else ''), name + '.md')
         rel = os.path.normpath(rel)
         canon = orig.replace('http://', 'https://')

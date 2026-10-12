@@ -10,8 +10,8 @@ classification: "КОДЕКС"
 last_amended: 2026-08-29  # consolidated text as captured on this date
 status: in_force
 mmk_status: "Амалкунанда"
-source: "https://mmk.tj/content/%D0%BA%D0%BE%D0%B4%D0%B5%D0%BA%D1%81%D0%B8-%D0%BC%D1%83%D1%80%D0%BE%D1%84%D0%B8%D0%B0%D0%B2%D0%B8%D0%B8-%D2%B7%D0%B8%D0%BD%D0%BE%D1%8F%D1%82%D0%B8%D0%B8-%D2%B7%D1%83%D0%BC%D2%B3%D1%83%D1%80%D0%B8%D0%B8-%D1%82%D0%BE%D2%B7%D0%B8%D0%BA%D0%B8%D1%81%D1%82%D0%BE%D0%BD"
-archived_source: "https://web.archive.org/web/20260829073758/https://mmk.tj/content/%D0%BA%D0%BE%D0%B4%D0%B5%D0%BA%D1%81%D0%B8-%D0%BC%D1%83%D1%80%D0%BE%D1%84%D0%B8%D0%B0%D0%B2%D0%B8%D0%B8-%D2%B7%D0%B8%D0%BD%D0%BE%D1%8F%D1%82%D0%B8%D0%B8-%D2%B7%D1%83%D0%BC%D2%B3%D1%83%D1%80%D0%B8%D0%B8-%D1%82%D0%BE%D2%B7%D0%B8%D0%BA%D0%B8%D1%81%D1%82%D0%BE%D0%BD"
+source: "https://mmk.tj/node/148"
+archived_source: "https://web.archive.org/web/20260829073758/https://mmk.tj/node/148"
 retrieved: 2026-10-12
 ---
 
